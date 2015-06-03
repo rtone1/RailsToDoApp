@@ -1,0 +1,51 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#task{
+  margin: 0px;
+  background-color: rgb(244, 244, 235);
+
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0px;
+}
+.container{
+  width: 100%;
+}
+header{
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid rgb(29, 131, 162);
+
+}
+.form{
+  width: 100%;
+}
+.posttasks{
+  width: 400px;
+  margin: 0px auto;
+  input[type=text]{
+    width: 250px;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid rgb(120, 137, 147);
+    border-radius: 4px;
+    font-size: 22px;
+    box-sizing: border-box;
+  }
+  input[type=submit]{
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    margin: 5px 0px 0px 5px;
+    background-color: rgb(159, 188, 199);
+    border: 1px solid rgb(120, 137, 147);
+    border-radius: 5px;
+  }
+}
+input:active,
+input:focus{
+  outline: 0;
+  border: 1px solid #93B7CC;
+}
+
+}

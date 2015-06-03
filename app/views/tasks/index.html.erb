@@ -1,0 +1,32 @@
+<body id="task">
+<header>
+  <h1>Tasks</h1>
+</header>
+
+
+<div class="container">
+  <div class="redline">
+
+    <div class="form">
+      <form class="posttasks" action="index.html" method="post">
+        <input type="text" name="task[note]" placeholder=" task up...">
+        <input class="submit" type="submit">
+      </form>
+    </div>
+
+    <article class="todo">
+
+    </article>
+    <article class="completed">
+
+    </article>
+  </div>
+</div>
+
+<script type="text/javascript">
+$('form').on('submit' ,function(e){
+    e.preventDefault();
+});
+</script>
+
+</body>
