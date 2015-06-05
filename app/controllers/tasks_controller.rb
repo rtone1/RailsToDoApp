@@ -7,14 +7,12 @@ class TasksController < ApplicationController
 
     tasksdone = Task.all
     @taskD = tasksdone.where(completed: true)
-
   end
 
   def indexdone
     tasks1 = Task.all
     task2 = tasks1.where(completed: true)
     @tasksdone = task2.order(:updated_at).reverse
-
   end
 
   def takscreateapi
