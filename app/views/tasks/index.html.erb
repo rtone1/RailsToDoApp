@@ -1,32 +1,57 @@
+
 <body id="task">
 <header>
-  <h1>Tasks</h1>
+  <div class="redline">
+  </div>
+  <h1>Tasks to-do</h1>
 </header>
 
 
 <div class="container">
-  <div class="redline">
 
-    <div class="form">
-      <form class="posttasks" action="index.html" method="post">
-        <input type="text" name="task[note]" placeholder=" task up...">
-        <input class="submit" type="submit">
-      </form>
-    </div>
+      <aside class="linered">
+      </aside>
 
-    <article class="todo">
+      <div class="form">
+        <form class="posttasks" action="/api/tasks" method="post">
+          <%= token_tag %>
+          <input type="text" name="task[note]" placeholder=" task up..."  required>
+          <input class="submit" type="submit">
+        </form>
+      </div>
 
-    </article>
-    <article class="completed">
+      <section>
+        <article class="todo">
+          <h3>to-do</h3>
+          <% @tasks.each do |task|%>
+            <ul>
+              <li>
+                <h2> <%= task.note %> </h2>
+                   <%= form_tag("/tasks/#{ task.id }", method: :put) do %>
+                   <%= button_tag ' ', class: "complete" %>
+                   <% end %>
+              </li> <span class="created_at"> <%= task.created_at %> </span>
+              <hr>
+            </ul>
+          <% end %>
+        </article>
 
-    </article>
-  </div>
+        <article class="completed">
+          <h3>completed</h3>
+          <% @taskD.each do |task|%>
+            <ul>
+              <li>
+                <h2> <%= task.note %> </h2>
+                <%= form_tag("/tasks/#{ task.id }", method: :delete) do %>
+                <%= button_tag ' ', class: "delete" %>
+                <% end %>
+              </li> <span class="created_at"> <%= task.updated_at %> </span>
+              <hr>
+            </ul>
+          <% end %>
+        </article>
+      </section>
 </div>
 
-<script type="text/javascript">
-$('form').on('submit' ,function(e){
-    e.preventDefault();
-});
-</script>
 
 </body>

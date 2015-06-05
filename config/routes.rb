@@ -2,6 +2,15 @@ Rails.application.routes.draw do
 
   root 'tasks#index'
 
+
+  post '/api/tasks' => 'tasks#takscreateapi'
+
+  delete '/tasks/:id' => 'tasks#destroy'
+
+  patch '/tasks/:id' => 'tasks#update'
+
+  resources :tasks
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
