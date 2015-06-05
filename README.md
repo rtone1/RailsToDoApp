@@ -8,3 +8,5 @@ Built on Ruby on Rails for the back end and HTML and CSS on the client side. By 
 
 
 #Upcoming Features 
+In the near future authentication will be added in order to provide individual users a way to save their own to-do's through sessions and timestamps will get sliced to provide users with cleaner data.
+
